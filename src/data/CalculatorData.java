@@ -7,9 +7,9 @@ import java.math.BigDecimal;
 public class CalculatorData {
     private static CalculatorData _instance;
 
-    private BigDecimal firstOperand;
-    private BigDecimal secondOperand;
-    private CalculatorState calculatorState;
+    private final BigDecimal firstOperand;
+    private final BigDecimal secondOperand;
+    private final CalculatorState calculatorState;
 
     private CalculatorData() {
         this.firstOperand = new BigDecimal(0);
@@ -18,7 +18,7 @@ public class CalculatorData {
     }
 
     public static CalculatorData getInstance() {
-        if(CalculatorData._instance == null)
+        if (CalculatorData._instance == null)
             _instance = new CalculatorData();
 
         return _instance;

@@ -1,4 +1,6 @@
-package calculation;
+package calculation.handler;
+
+import calculation.ICalculation;
 
 import java.math.BigDecimal;
 import java.math.MathContext;

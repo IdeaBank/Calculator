@@ -1,14 +1,17 @@
-package calculation;
+package calculation.handler;
+
+import calculation.ICalculation;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
+import java.math.RoundingMode;
 
 public class DivideHandler implements ICalculation {
     @Override
     public BigDecimal calculate(BigDecimal firstOperand, BigDecimal secondOperand) throws ArithmeticException {
         checkDivisionByZero(firstOperand, secondOperand);
 
-        return firstOperand.divide(secondOperand, MathContext.DECIMAL128);
+        return firstOperand.divide(secondOperand, 10000, RoundingMode.HALF_UP);
     }
 
     private void checkDivisionByZero(BigDecimal firstOperand, BigDecimal secondOperand) throws ArithmeticException {
